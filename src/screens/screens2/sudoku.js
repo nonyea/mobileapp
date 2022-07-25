@@ -4,6 +4,8 @@ import { View } from 'react-native';
 import Interface from "./Interface";
 import { REST } from "../../api/api";
 import { GlobalStyles } from "../../Style";
+import { WebView } from 'react-native-webview';
+
 
 function getGrid() {
   const grid = [];
@@ -100,7 +102,7 @@ function Sudoku() {
     }
   }
 
-  return (
+  /* return (
     <View style={GlobalStyles.sudoku}>
       <Board
         puzzle={initialGrid.current}
@@ -109,7 +111,14 @@ function Sudoku() {
       />
       <Interface handleInterface={handleInterface} status={puzzleStatus} />
     </View>
-  );
+  ); */
+
+  return (
+    <View style={{width: "100%", height: "100%"}}>
+    {/* Full screen view */}
+    <WebView source={{uri: "https://sudoku.com/"}}/>
+    </View>
+  )
 }
 
 export default Sudoku;

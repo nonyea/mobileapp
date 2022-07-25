@@ -25,7 +25,7 @@ const Stack = createNativeStackNavigator();
 
 const StackNavigator = () => {
   return (
-    <Stack.Navigator initialRouteName={'GameScreen'} headerMode="none">
+    <Stack.Navigator initialRouteName={'GameScreen'} screenOptions={{headerShown: false}} headerMode="none">
       <Stack.Screen name="GameScreen" component={GameScreen} />
       <Stack.Screen
         name="sudoku"
@@ -37,7 +37,7 @@ const StackNavigator = () => {
 
 const StackNavigator2 = () => {
   return (
-    <Stack.Navigator initialRouteName={'DeviceMngScreen'} headerMode="none">
+    <Stack.Navigator initialRouteName={'DeviceMngScreen'} screenOptions={{headerShown: false}} headerMode="none">
       <Stack.Screen name="DeviceMngScreen" component={DeviceMngScreen} />
       <Stack.Screen
         name="Quiz"
@@ -80,7 +80,10 @@ const Main = ({route, navigation}) => {
             // You can return any component that you like here!
             return <MaterialCommunityIcons name={iconName} size={size} color={color} />;
           },
-        })}
+          headerShown: false,
+          
+        })
+      }
         tabBarOptions={{
           activeTintColor: '#0293d6',
           inactiveTintColor: '#485459',
