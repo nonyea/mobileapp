@@ -1,3 +1,37 @@
+
+
+import * as React from 'react';
+//import { NavigationContainer } from '@react-navigation/native';
+//import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+
+// Screens
+import Main2 from './Main2';
+import SplashScreen from './screens/SplashScreen';
+
+const Stack = createNativeStackNavigator();
+
+const Main = () => {
+
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="SplashScreen" component={SplashScreen} options={{ headerShown: false }} />
+      <Stack.Screen
+        name="Main2"
+        options={{headerShown: false}}
+        component={Main2}
+      />
+    </Stack.Navigator>
+  );
+};
+
+
+export default Main;
+
+
+/*
 import * as React from 'react';
 //import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -6,29 +40,23 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 
 // Screens
-import HomeScreen from './screens/HomeScreen';
-import ExerciseScreen from './screens/ExerciseScreen';
-import SleepScreen from './screens/SleepScreen';
-import DeviceMngScreen from './screens/DeviceMngScreen';
-import GameScreen from './screens/GameScreen';
-import sudoku from './screens/screens2/sudoku';
+import Main1 from './Main1';
+import Login from './screens/Login';
+
 
 //Screen names
-const homeName = "Home";
-const exerciseName = "Exercise";
-const sleepName = "Sleep";
-const deviceMName = "Device Management";
-const gameName = "Game";
+
+const LogName = "Login";
 
 const Stack = createNativeStackNavigator();
 
 const StackNavigator = () => {
   return (
-    <Stack.Navigator initialRouteName={'GameScreen'} headerMode="none">
-      <Stack.Screen name="GameScreen" component={GameScreen} />
+    <Stack.Navigator>
+      <Stack.Screen name="Login" component={Login} />
       <Stack.Screen
-        name="sudoku"
-        component={sudoku}
+        name="Main1"
+        component={Main1}
       />
     </Stack.Navigator>
   );
@@ -39,29 +67,15 @@ const Main = () => {
   return (
     
       <Tab.Navigator
-        initialRouteName={homeName}
+        initialRouteName={LogName}
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {
             let iconName;
             let rn = route.name;
 
-            if (rn === homeName) {
+            if (rn === LogName) {
               iconName = focused ? 'home' : 'home';
-
-            } else if (rn === exerciseName) {
-              iconName = focused ? 'dumbbell' : 'dumbbell';
-
-            } else if (rn === sleepName) {
-              iconName = focused ? 'sleep' : 'sleep';
-
-            } else if (rn === deviceMName) {
-              iconName = focused ? 'cellphone-off' : 'cellphone-off';
-          
-            } else if (rn === gameName) {
-              iconName = focused ? 'gamepad-variant-outline' : 'gamepad-variant-outline';
             }
-
-
             // You can return any component that you like here!
             return <MaterialCommunityIcons name={iconName} size={size} color={color} />;
           },
@@ -73,11 +87,8 @@ const Main = () => {
           style: { padding: 10, height: 70}
         }}>
 
-        <Tab.Screen name={homeName} component={HomeScreen} />
-        <Tab.Screen name={exerciseName} component={ExerciseScreen} />
-        <Tab.Screen name={sleepName} component={SleepScreen} />
-        <Tab.Screen name={deviceMName} component={DeviceMngScreen} />
-        <Tab.Screen name={gameName} component={StackNavigator} />
+
+        <Tab.Screen name={LogName} component={StackNavigator} />
 
       </Tab.Navigator>
     
@@ -85,3 +96,7 @@ const Main = () => {
 }
 
 export default Main;
+
+
+
+*/

@@ -1,10 +1,105 @@
-import DateTimePicker from '@react-native-community/datetimepicker';
+import React, {useState, useEffect} from 'react';
+import { StyleSheet, View, Button, Text, SafeAreaView } from 'react-native';
+import TimePicker from './Alarm/TimePicker';
+import ListAlarms from './Alarm/ListAlarms';
+import { configureStore1 as configureStore } from './Alarm/store';
+import { configureStore1 } from './Alarm/store/store2';
+import { Provider } from 'react-redux';
+import { Divider } from 'react-native-paper';
+import WakeUpListAlarms from './Alarm/WakeUpListAlarms';
+import WakeUpTimePicker from './Alarm/WakeUpTimePicker';
+
+
+const SleepScreen = () => {
+  const store = configureStore();
+  const store2 = configureStore1();
+  const [sleepTime, setSleepTime] = useState(Date.now())
+  useEffect(()=>{
+    console.log("Update",sleepTime)
+  }, [])
+
+  return (
+    <View style={styles.mainContainer}>
+
+      <View style={styles.externalContainer}>
+        <Provider store={store}>
+
+          <Text style={styles.heading}> Sleep </Text>
+          <SafeAreaView style={styles.listAlarms}>
+            <ListAlarms />
+          </SafeAreaView>
+
+          <View style={styles.timePicker}>
+            <TimePicker setSelectedSleepTime={setSleepTime} />
+          </View>
+        </Provider>
+
+      </View>
+      <View style={styles.externalContainer}>
+        <Divider />
+        <Text style={styles.heading}> Wake up </Text>
+        <Provider store={store2}>
+
+          <SafeAreaView style={styles.listAlarms}>
+            <WakeUpListAlarms/>
+          </SafeAreaView>
+
+          <View style={styles.timePicker}>
+            <WakeUpTimePicker sleepTime={sleepTime} />
+          </View>
+        </Provider>
+
+      </View>
+
+    </View>
+
+  );
+}
+
+export default SleepScreen;
+
+
+const styles = StyleSheet.create({
+  externalContainer: {
+    height: "50%",
+    alignItems: "center",
+    flex: 1,
+    width: "100%",
+  },
+  mainContainer: {
+    flex: 1,
+    alignItems: 'center',
+    // justifyContent: 'center',
+  },
+  heading: {
+    // fontWeight: "bold",
+    fontSize: 25,
+    padding: 20,
+  },
+  timePicker: {
+    paddingTop: '10%',
+    width: '50%',
+    // right: '10%',
+    bottom: 20,
+  },
+  listAlarms: {
+    flex: 1,
+    width: '100%',
+  },
+});
+
+
+
+
+/*
+//import DateTimePicker from '@react-native-community/datetimepicker';
 import * as React from 'react';
 import {useState} from 'react'
-import { View, Text, TextInput, Button } from 'react-native';
+import { View} from 'react-native';
 import { createAlarm } from 'react-native-simple-alarm';
 
 const SleepScreen = () =>  {
+
     const defaultState = {
         date: Date.now() + 200000 * 24,
         message: "Default Alarm message",
@@ -31,7 +126,7 @@ const SleepScreen = () =>  {
            {/*  <Text
                 style={{ fontSize: 26, fontWeight: 'bold' }}>Settings Screen</Text>
                 <DateTimePicker mode={"time"} onChange={setDate}/>
-                <Button onPress={()=> setAlarm(date, "Reminder to sleep", 3)}/> */}
+                <Button onPress={()=> setAlarm(date, "Reminder to sleep", 3)}/> }
 
 
         </View>
@@ -40,7 +135,24 @@ const SleepScreen = () =>  {
 
 export default SleepScreen;
 
+*/
+/*
 
+import * as React from 'react';
+import { View, Text } from 'react-native';
+
+const SleepScreen = () =>  {
+    return (
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+            <Text
+                style={{ fontSize: 26, fontWeight: 'bold' }}>Sleep Screen</Text>
+        </View>
+    );
+}
+
+export default SleepScreen;
+
+*/
 /*
 import AlarmClock from "react-native-alarm-clock";
 

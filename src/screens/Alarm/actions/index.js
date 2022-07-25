@@ -1,0 +1,5 @@
+export const ADD_ALARM = 'ADD_ALARM';
+export const DELETE_ALARM = 'DELETE_ALARM';
+
+export const ADD_WAKE_UP_ALARM = 'ADD_WAKE_UP_ALARM'
+export const DELETE_WAKE_UP_ALARM = 'DELETE_SLEEP_ALARM'
