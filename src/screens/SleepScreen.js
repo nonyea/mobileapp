@@ -2,17 +2,13 @@ import React, {useState, useEffect} from 'react';
 import { StyleSheet, View, Button, Text, SafeAreaView } from 'react-native';
 import TimePicker from './Alarm/TimePicker';
 import ListAlarms from './Alarm/ListAlarms';
-import { configureStore1 as configureStore } from './Alarm/store';
-import { configureStore1 } from './Alarm/store/store2';
 import { Provider } from 'react-redux';
 import { Divider } from 'react-native-paper';
-import WakeUpListAlarms from './Alarm/WakeUpListAlarms';
-import WakeUpTimePicker from './Alarm/WakeUpTimePicker';
+import { configureStore1 as configureStore } from './Alarm/store';
 
 
 const SleepScreen = () => {
   const store = configureStore();
-  const store2 = configureStore1();
   const [sleepTime, setSleepTime] = useState(Date.now())
   useEffect(()=>{
     console.log("Update",sleepTime)
@@ -35,22 +31,6 @@ const SleepScreen = () => {
         </Provider>
 
       </View>
-      <View style={styles.externalContainer}>
-        <Divider />
-        <Text style={styles.heading}> Wake up </Text>
-        <Provider store={store2}>
-
-          <SafeAreaView style={styles.listAlarms}>
-            <WakeUpListAlarms/>
-          </SafeAreaView>
-
-          <View style={styles.timePicker}>
-            <WakeUpTimePicker sleepTime={sleepTime} />
-          </View>
-        </Provider>
-
-      </View>
-
     </View>
 
   );

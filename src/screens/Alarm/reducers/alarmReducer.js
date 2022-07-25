@@ -20,6 +20,7 @@ const alarmReducer = (state = initialState, action) => {
         time: time,
         date: date,
       };
+      state.alarms.concat(alarm)
       return {
         ...state,
         alarms: state.alarms.concat(alarm),

@@ -4,7 +4,19 @@
     "slug": "mobileapp",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./src/assets/icon.png",
+    "plugins": [
+      [
+        "expo-notifications",
+        {
+          "icon": "./local/assets/BGR.png",
+          "color": "#ffffff",
+          "sounds": [
+            "./local/assets/noti-gang.wav"
+          ]
+        }
+      ]
+    ],
     "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/splash.png",

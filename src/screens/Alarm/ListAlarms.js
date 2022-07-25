@@ -27,8 +27,8 @@ const ListAlarms = (props) => {
                             title="Remove"
                             color="red"
                             onPress={() => {
-                                ReactNativeAN.deleteAlarm(item.alarmNotifData.id);
-                                ReactNativeAN.stopAlarmSound();
+                                //ReactNativeAN.deleteAlarm(item.alarmNotifData.id);
+                                //ReactNativeAN.stopAlarmSound();
                                 props.delete(item.value);
                             }}
                         />
