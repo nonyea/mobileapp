@@ -8,9 +8,9 @@ const Seperator = () => <View style = {styles.seperator} />
 const Jogging = () => {
     return (
 <View style={styles.container2}>
-      <Text>Bounce lightly from one foot to the other.</Text>
+      <Text>Bounce from one foot to the other.</Text>
       <Seperator/>
-      <Text>At the same same, swing the arms from side to side.</Text>
+      <Text>At the same same, swing the arms from front to back in a contrasting manner.</Text>
       <Seperator/>
       <Image
           style={{width: '100%', height: '50%'}}

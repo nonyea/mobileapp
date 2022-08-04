@@ -9,7 +9,7 @@ const GameScreen = ({navigation}) => {
     <View style={styles.container}>
       <Title titleText='SUDOKU' />
       <View>
-        <Text>Welcome to the Game Screen where you would be tasked on a game of sudoku</Text>
+        <Text style= {styles.text}>Welcome to the Game Screen where you will be tasked in a game of sudoku</Text>
       </View>
       <View style={styles.bannerContainer}>
         <Image
@@ -45,6 +45,11 @@ const styles = StyleSheet.create({
     paddingTop: 40,
     paddingHorizontal: 20,
     height: '100%',
+  },
+  text: {
+    fontSize: 18,
+    alignSelf: 'center',
+    textAlign: 'center',
   },
   button: {
     width: '100%',

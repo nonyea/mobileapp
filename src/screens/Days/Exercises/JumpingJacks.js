@@ -8,9 +8,11 @@ const Seperator = () => <View style = {styles.seperator} />
 const JumpingJacks = () => {
     return (
         <View style={styles.container2}>
-        <Text>Begin with the feet hip-width apart and arms down.</Text>
-        <Text> Raise the arms out to the sides, straight in the air while jumping out with the feet apart.</Text>
-        <Text>Jump back into the starting position and land softly on the balls of the feet, bringing the arms back into the body.</Text>
+        <Text>Start with your arms down and your feet as wide as hip-width.</Text>
+        <Seperator/>
+        <Text>Raise your arms up to the sides while jumping out with your feet apart.</Text>
+        <Seperator/>
+        <Text>Jump back into the starting position and land on the balls of the feet.</Text>
         <Seperator/>
         <Image
             style={{width: '100%', height: '50%'}}

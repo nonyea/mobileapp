@@ -8,11 +8,11 @@ const Seperator = () => <View style = {styles.seperator} />
 const LateralShuffles = () => {
     return (
         <View style={styles.container2}>
-        <Text>Start on one end of a room and squat slightly.</Text>
+        <Text>Start at one end of a room and squat slightly.</Text>
         <Seperator/>
-        <Text> Shuffle toward the other side of the room, with the feet meeting together before shuffling out and forward again.</Text>
+        <Text>Shuffle toward the other half of the room, with your feet meet together before shuffling out and forward again.</Text>
         <Seperator/>
-        <Text>Pick up speed and increase the squat depth to increase the exercise intensity.</Text>
+        <Text>Increase the speed and squat depth to intensify the workout.</Text>
         <Seperator/>
         <Image
             style={{width: '100%', height: '50%'}}

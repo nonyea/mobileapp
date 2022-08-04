@@ -8,13 +8,10 @@ import {
   SafeAreaView,
 } from "react-native";
 import * as Device from "expo-device";
-//import { Alert } from 'react-native-web';
 import { connect } from "react-redux";
 import { addAlarm } from "./actions/alarm";
 import DateTimePicker from "react-native-modal-datetime-picker";
-import { Divider } from "react-native-elements";
 import ReactNativeAN from "react-native-alarm-notification";
-// import expo notifications from 'expo-notifications';
 import * as Notifications from "expo-notifications";
 
 const TimePicker = (props) => {
@@ -78,33 +75,30 @@ const TimePicker = (props) => {
     const fireDate = ReactNativeAN.parseDate(datetime);
     console.log("A date has been picked:", fireDate);
     const alarmNotifData = {
-      id: makeid(), // Required
-      title: "Alarm Ringing", // Required
-      message: "My Notification Message", // Required
-      channel: "alarm-channel", // Required. Same id as specified in MainApplication's onCreate method
+      id: makeid(), 
+      title: "Alarm Ringing", 
+      message: "My Notification Message", 
+      channel: "alarm-channel", 
       ticker: "My Notification Ticker",
-      auto_cancel: true, // default: true
+      auto_cancel: true, 
       vibrate: true,
-      vibration: 100, // default: 100, no vibration if vibrate: false
-      small_icon: "ic_launcher", // Required
+      vibration: 100, 
+      small_icon: "ic_launcher", 
       large_icon: "ic_launcher",
       play_sound: true,
-      sound_name: null, // Plays custom notification ringtone if sound_name: null
+      sound_name: null, 
       color: "red",
-      schedule_once: true, // Works with ReactNativeAN.scheduleAlarm so alarm fires once
+      schedule_once: true, 
       tag: "some_tag",
-      fire_date: fireDate, // Date for firing alarm, Required for ReactNativeAN.scheduleAlarm.
-
-      // You can add any additional data that is important for the notification
-      // It will be added to the PendingIntent along with the rest of the bundle.
-      // e.g.
+      fire_date: fireDate, 
       data: { value: datetime },
+      
     };
 
     props.add(alarmNotifData);
     //ReactNativeAN.scheduleAlarm(alarmNotifData);
     hideDateTimePicker();
-    schedulePushNotification(datetime)
+    schedulePushNotification(datetime) 
       .then(() => {
         Alert.alert("Notification scheduled");
       })
@@ -112,6 +106,8 @@ const TimePicker = (props) => {
         Alert.alert(`Notification scheduling failed: ${e}`);
         console.log(e);
       });
+
+
   };
 
   return (
@@ -136,13 +132,15 @@ const TimePicker = (props) => {
 async function schedulePushNotification(date) {
   await Notifications.scheduleNotificationAsync({
     content: {
-      title: "Go to sleep. 📬",
-      body: "Time to go to sleep",
+      title: "Wake up. 📬",
+      body: "Time to wake up",
       data: { data: "goes here" },
+
     },
     trigger: { date: date },
   });
 }
+
 
 async function registerForPushNotificationsAsync() {
   let token;

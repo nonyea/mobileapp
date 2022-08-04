@@ -7,9 +7,9 @@ const Seperator = () => <View style = {styles.seperator} />
 const ArmCircles = () => {
     return (
         <View style={styles.container2}>
-      <Text>A person can perform arm circles while sitting or standing</Text>
+      <Text>Arm circles can be done while standing or sitting</Text>
       <Seperator/>
-      <Text> Rotate the arms in a circular motion, both clockwise and counterclockwise</Text>
+      <Text>Your arms should be rotated in a circle in both a clockwise and counterclockwise direction.</Text>
       <Seperator/>
       <Image
           style={{width: '100%', height: '50%'}}

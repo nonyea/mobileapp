@@ -8,11 +8,11 @@ const Seperator = () => <View style = {styles.seperator} />
 const MountainClimbers = () => {
     return (
         <View style={styles.container2}>
-      <Text> Start in a pushup position with the right leg extended backward and the left leg near the chest with the toes on the ground. </Text>
+      <Text>Beginning in a pushup position extend the right leg backwards, and the left leg close to the chest with the toes on the floor.</Text>
       <Seperator/>
-      <Text>Keeping the hands on the ground and hips level, quickly switch the positions of the legs. </Text>
+      <Text>Change the position of your legs swiftly while keeping your hands on the floor.</Text>
       <Seperator/>
-      <Text>Continue to alternate the legs.</Text>
+      <Text>Continue to alternate your legs.</Text>
       <Seperator/>
       <Image
           style={{width: '100%', height: '50%'}}

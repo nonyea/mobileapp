@@ -17,7 +17,7 @@ const Main2 = () => {
 
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Login" component={Login} />
+      <Stack.Screen name="Sign In" component={Login} />
       <Stack.Screen
       options={{
         headerShown: false

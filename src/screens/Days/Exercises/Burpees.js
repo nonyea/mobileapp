@@ -6,15 +6,15 @@ const Seperator = () => <View style = {styles.seperator} />
 const Burpees = () => {
     return (
       <View style={styles.container2}>
-      <Text>Start with the body in a pushup position.</Text>
+      <Text>Begin with your body in a pushup position.</Text>
       <Seperator/>
-      <Text> Push off the balls of the feet to bring the knees into the chest and land in a squat.</Text>
+      <Text>Push with the balls of your feet which would bring your knees into the chest and land in a squat position.</Text>
       <Seperator/>
-      <Text>Jump out of the squat, raising the hands in the air before landing softly back into the squat. </Text>
+      <Text>Jump out of the squat while raising your hands up, before landing softly back into the squat. </Text>
       <Seperator/>
-      <Text>Place the hands back on the floor underneath the shoulders.</Text>
+      <Text>Put your hands on the floor again as wide as shoulder-width.</Text>
       <Seperator/>
-      <Text>Spring the legs back to return to the starting position.</Text>
+      <Text>Go back to the starting position by springing your legs back.</Text>
       <Seperator/>
       <Image
           style={{width: '100%', height: '50%'}}

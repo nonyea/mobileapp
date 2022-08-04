@@ -8,11 +8,11 @@ const Seperator = () => <View style = {styles.seperator} />
 const Inchworms = () => {
     return (
         <View style={styles.container2}>
-        <Text>Start in a standing position, reach down and touch the toes briefly before walking the hands out to a pushup position.</Text>
+        <Text>From a standing position, briefly touch your toes before moving your hands out to a pushup position.</Text>
         <Seperator/>
-        <Text>Perform a pushup, then walk the feet toward the hands and lift the hips upwards, similar to the downward dog position.</Text>
+        <Text>Perform a pushup, then move your feet toward your hands while lifting your hips upwards like in a downward dog position.</Text>
         <Seperator/>
-        <Text>Inch the feet as close as possible toward the hands before walking the hands out to return to the pushup position.</Text>
+        <Text>Inch your feet as near to your hands as you can, then walk your hands out to resume at the pushup position.</Text>
         <Seperator/>
         <Image
             style={{width: '100%', height: '50%'}}

@@ -5,9 +5,9 @@ import Title from './screens2/quiz/title'
 const DeviceMngScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
-      <Title titleText='QUIZZLER' />
+      <Title titleText='QUESTIONNAIRE' />
       <View>
-        <Text>This quiz is to evaluate your activities this week and determine wether you have made progress in improving your cognitive health</Text>
+        <Text style= {styles.text}>This questionnaire will evaluate the activities you performed this week in order to determine wether you have made progress in improving your cognitive health</Text>
       </View>
       <View style={styles.bannerContainer}>
         <Image
@@ -43,6 +43,11 @@ const styles = StyleSheet.create({
     paddingTop: 40,
     paddingHorizontal: 20,
     height: '100%',
+  },
+  text: {
+    fontSize: 18,
+    alignSelf: 'center',
+    textAlign: 'center',
   },
   button: {
     width: '100%',

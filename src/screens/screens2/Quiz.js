@@ -57,7 +57,7 @@ const Quiz = () => {
     Animated.timing(progress, {
       toValue: currentQuestionIndex + 1,
       duration: 1000,
-      useNativeDriver: false,
+      useNativeDriver: false, 
     }).start();
   };
   const restartQuiz = () => {
@@ -311,7 +311,7 @@ const Quiz = () => {
                 }}
               >
                 {score > allQuestions.length / 2
-                  ? "A good laugh and a long sleep are the best cures in the doctor's book. Keep up the good work!"
+                  ? "You're getting there! you have improved"
                   : "You haven't been taking care of yourself"}
               </Text>
               <View style={{paddingBottom: 10}}>
@@ -337,25 +337,7 @@ const Quiz = () => {
                   marginVertical: 20,
                 }}
               >
-                <Text
-                  style={{
-                    fontSize: 30,
-                    color:
-                      score > allQuestions.length / 2
-                        ? COLORS.success
-                        : COLORS.error,
-                  }}
-                >
-                  {score}
-                </Text>
-                <Text
-                  style={{
-                    fontSize: 20,
-                    color: COLORS.black,
-                  }}
-                >
-                  / {allQuestions.length}
-                </Text>
+
               </View>
               {/* Retry Quiz button */}
               <TouchableOpacity

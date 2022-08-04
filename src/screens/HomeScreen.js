@@ -2,17 +2,21 @@ import React, { useEffect } from "react";
 import {
   View,
   Text,
-  TouchableOpacity,
   StyleSheet,
   ScrollView,
   Image,
   ImageBackground,
   SafeAreaView,
   StatusBar,
+  Dimensions,
+  TouchableOpacity
 } from "react-native";
-import Counter from "./Counter";
+import { useState } from "react-native"
+import { Feather } from '@expo/vector-icons';
 
 const Seperator = () => <View style={styles.seperator} />;
+const Seperator2 = () => <View style={styles.seperator2} />;
+
 
 const HomeScreen = ({ route, navigation }) => {
   const { userName } = route.params;
@@ -22,85 +26,119 @@ const HomeScreen = ({ route, navigation }) => {
     <SafeAreaView style={styles.container}>
       <ScrollView style={{...styles.scrollView, flexGrow: 1}}>
         <View style={styles.header}>
-          <Text style={styles.text_header}>Welcome! {userName}</Text>
+        <Image
+            source={require('../assets/logo.png')}
+            style={styles.logo}
+            resizeMode="stretch"
+          />
+          <Text style={styles.text_header}>Welcome {userName}!</Text>
         </View>
 
         <View style={styles.footer}>
-             <ImageBackground
-              source={require("../assets/quote.jpg")}
-              style={styles.opt1}
-            >
-              <Text style={styles.text}>quote</Text>
-            </ImageBackground>
+          <Seperator/>
+          <ImageBackground
+            source={require("../assets/sleep.jpg")}
+            resizeMode="cover"
+            style={styles.opt1}
+          >
+          <Text style={styles.text}>Sleep for 7-9 hours daily</Text>
+          </ImageBackground>
 
-            <ImageBackground
-              source={require("../assets/sleep.jpg")}
-              resizeMode="cover"
-              style={styles.opt1}
-            >
-              <Text style={styles.text}>Sleep for 7-9 hours daily</Text>
-            </ImageBackground>
+          <Seperator/>
 
-            <ImageBackground
-              source={require("../assets/device.jpg")}
-              resizeMode="cover"
-              style={styles.opt1}
-            >
-              <Text style={styles.text}>
-                Try to limit your daily recreational ddevice use to 3 hours
-              </Text>
-            </ImageBackground>
+          <ImageBackground
+            source={require("../assets/quote.jpg")}
+            resizeMode="cover"
+            style={styles.opt1}
+          >
+          <Text style={styles.text}>"Never mistake activity for achivement" - John Wooden</Text>
+          </ImageBackground>
 
-            <ImageBackground
-              source={require("../assets/food.jpg")}
-              style={styles.opt1}
-            >
-              <Text style={styles.text}>
-                Start your day with meal packed with vitamins
-              </Text>
-            </ImageBackground>
+          <Seperator/>
 
-            <ImageBackground
-              source={require("../assets/exercise.jpg")}
-              style={styles.opt1}
-            >
-              <Text style={styles.text}>
-                Choose any 2 days to rest from exercises
-              </Text>
-            </ImageBackground> 
+          <ImageBackground
+            source={require("../assets/food.jpg")}
+            resizeMode="cover"
+            style={styles.opt1}
+          >
+          <Text style={styles.text}>Start your day with a meal packed with vitamins</Text>
+          </ImageBackground>
 
-            <ImageBackground
-              source={require("../assets/quiz.jpg")}
-              style={styles.opt1}
-            >
-              <Text style={styles.text}>
-                Take the quiz weekly to check your improvement
-              </Text>
-            </ImageBackground>
+          <Seperator/>
 
-            <Seperator />
+          <ImageBackground
+            source={require("../assets/brain.jpg")}
+            resizeMode="cover"
+            style={styles.opt1}
+          >
+          <Text style={styles.text}>Partake in mentally stimulating activities regularly</Text>
+          </ImageBackground>
 
-            <Counter />
-            <Text style={styles.text_footer}> Daily quote</Text>
-            <TouchableOpacity>
-              <Image
-                source={require("../assets/sleep.jpg")}
-                style={{
-                  top: 60,
-                  left: -50,
-                }}
-              />
-              <Text> hi</Text>
-            </TouchableOpacity>
-            <View style={styles.action}>
-                
-            </View>
-          </View>
+          <Seperator/>
+
+          <ImageBackground
+            source={require("../assets/sudoku.png")}
+            resizeMode="cover"
+            style={styles.opt1}
+          >
+          <Text style={styles.text}>Visit the sudoku screen to play a game of sudoku</Text>
+          </ImageBackground>
+
+          <Seperator/>
+
+          <ImageBackground
+            source={require("../assets/device.jpg")}
+            resizeMode="cover"
+            style={styles.opt1}
+          >
+          <Text style={styles.text}>
+              Limit your daily recreational device use to 3 hours
+            </Text>
+          </ImageBackground>
+
+          <Seperator/>
+
+          <ImageBackground
+            source={require("../assets/exercise.jpg")}
+            style={styles.opt1}
+          >
+          <Text style={styles.text}>
+              Choose any 2 days to rest from exercises
+            </Text>
+          </ImageBackground> 
+
+          <Seperator/>
+
+          <ImageBackground
+            source={require("../assets/quiz.jpg")}
+            style={styles.opt1}
+          >
+          <Text style={styles.text}>
+              Take the quiz weekly to check your improvement
+          </Text>
+          </ImageBackground>
+
+          <Seperator/>
+          
+        </View>
+        <View>
+          <Seperator2/>
+          <Text style = {styles.footer2_text}> <Feather name="mail" size={24} color="white" />   email: braintease@gmail.com </Text> 
+          <Seperator2/>
+          <Text style = {styles.footer2_text}> <Feather name="phone" size={24} color="white" />   phone number: +234 806 479 2325</Text>
+          <Seperator2/>
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
 };
 export default HomeScreen;
+
+const {height} = Dimensions.get("screen");
+const height_logo = height * 0.05;
+
+const {height2} = Dimensions.get("screen");
+const height_2 = height * 0.2;
 
 const styles = StyleSheet.create({
   container: {
@@ -109,18 +147,32 @@ const styles = StyleSheet.create({
     paddingTop: StatusBar.currentHeight,
   },
   header: {
-    flex: 1,
+    flex: 2,
     justifyContent: "flex-end",
     paddingHorizontal: 20,
     paddingBottom: 50,
-    borderBottomLeftRadius: 100,
-    borderBottomRightRadius: 30,
     backgroundColor: "#19719a",
+  },
+  logo: {
+    width: height_logo,
+    height: height_logo,
+    left: '87%',
+    top: '10%'
+  },
+  scrollView: {
+    marginHorizontal: 10,
+    color: "#19719a"
   },
   footer: {
     flex: 3,
     backgroundColor: "#fff",
     paddingHorizontal: 20,
+  },
+  footer2_text: {
+    color: "#fff",
+    fontSize: 18,
+    fontWeight: "bold",
+
   },
   text_header: {
     color: "#fff",
@@ -131,88 +183,39 @@ const styles = StyleSheet.create({
     color: "#000000",
     fontSize: 18,
   },
-  action: {
-    flexDirection: "row",
-    marginTop: 10,
-    borderBottomWidth: 1,
-    borderBottomColor: "#f2f2f2",
-    paddingBottom: 5,
-  },
-  actionError: {
-    flexDirection: "row",
-    marginTop: 10,
-    borderBottomWidth: 1,
-    borderBottomColor: "#FF0000",
-    paddingBottom: 5,
-  },
-  signIn: {
-    width: "100%",
-    height: 50,
-    justifyContent: "center",
-    alignItems: "center",
-    borderRadius: 10,
-  },
-  textSign: {
-    fontSize: 18,
-    fontWeight: "bold",
-  },
-  input: {
-    borderWidth: 1,
-    borderColor: "#777",
-    padding: 8,
-    margin: 10,
-    width: 300,
-    fontStyle: "normal",
-  },
+
   seperator: {
     marginVertical: 8,
     borderBottomColor: "#fff",
+    borderBottomWidth: 15,
+  },
+  seperator2: {
+    marginVertical: 8,
+    borderBottomColor: "#19719a",
     borderBottomWidth: 15,
   },
   opt1: {
     padding: 20,
     borderRadius: 35,
     width: "105%",
-    //height: "40%",
+    height: "40%",
     height: 300,
     justifyContent: "center",
-    //overflow: "hidden",
+    overflow: "hidden",
     borderBottomLeftRadius: 35,
     borderBottomRightRadius: 35,
+    width: height2,
+    height: height_2,
   },
   text: {
     fontWeight: "bold",
-  },
-  opt4: {
-    backgroundColor: "#fff",
-    padding: 20,
-    borderRadius: 15,
-    width: 130,
-    height: 60,
-
-    position: "absolute",
-    top: 180,
-    left: 250,
-  },
-  opt5: {
-    backgroundColor: "#fff",
-    padding: 20,
-    borderRadius: 15,
-    width: 130,
-    height: 60,
-
-    position: "absolute",
-    top: 180,
-    left: 250,
+    fontSize: 18,
+    alignSelf: 'center',
+    textAlign: 'center',
   },
   optText: {
     color: "#19719a",
-    fontSize: 15,
     fontWeight: "bold",
-    justifyContent: "center",
-  },
-  scrollView: {
-    backgroundColor: "pink",
-    marginHorizontal: 20,
-  },
+    justifyContent: "center"
+  }
 });

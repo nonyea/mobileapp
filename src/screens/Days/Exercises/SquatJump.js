@@ -7,13 +7,13 @@ const Seperator = () => <View style = {styles.seperator} />
 const SquatJump = () => {
     return (
         <View style={styles.container2}>
-      <Text>Stand with the feet hip-width apart and arms at the sides.</Text>
+      <Text>Stand with your arms at your sides and your feet hip-width apart.</Text>
       <Seperator/>
       <Text>Bend at the knees to squat</Text>
       <Seperator/>
-      <Text>From the squat position, jump in the air and extend the hips until the body is straight.</Text>
+      <Text>Jump into the air while still in the squat stance. Extend your hips until the body is straight.</Text>
       <Seperator/>
-      <Text>Land softly on the balls of the feet, rolling backward to absorb the shock in the heels.</Text>
+      <Text>Land softly on the balls of the feet.</Text>
       <Seperator/>
       <Image
           style={{width: '100%', height: '50%'}}

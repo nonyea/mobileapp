@@ -8,13 +8,13 @@ const Seperator = () => <View style = {styles.seperator} />
 const JumpingLunges = () => {
     return (
         <View style={styles.container2}>
-        <Text>Stand with the feet hip-width apart</Text>
+        <Text>Pose with the feet hip-width apart</Text>
         <Seperator/>
-        <Text>Extend the right leg back to a lunge position.</Text>
+        <Text>The right leg should now be extended backwards into a lunge.</Text>
         <Seperator/>
-        <Text>Push off with the right foot to lift the right knee to hip height, jumping in the air while doing so.</Text>
+        <Text>Lift the right knee to hip height by pushing off with the right foot. Jump in the air while doing so.</Text>
         <Seperator/>
-        <Text>Return the right foot to the starting position and repeat for 10 lunges on one side.</Text>
+        <Text>Return the right foot to the starting position and repeat.</Text>
         <Seperator/>
         <Text>Repeat for the left leg</Text>
         <Seperator/>

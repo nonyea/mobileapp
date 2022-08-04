@@ -17,9 +17,9 @@ import Quiz from './screens/screens2/Quiz';
 //Screen names
 const homeName = "Home";
 const exerciseName = "Exercise";
-const sleepName = "Sleep";
-const deviceMName = "Device Management";
-const gameName = "Game";
+const sleepName = "Alarm";
+const deviceMName = "Questionnaire";
+const gameName = "Sudoku";
 
 const Stack = createNativeStackNavigator();
 
@@ -88,14 +88,15 @@ const Main = ({route, navigation}) => {
           activeTintColor: '#0293d6',
           inactiveTintColor: '#485459',
           labelStyle: { paddingBottom: 10, fontSize: 10 },
-          style: { padding: 10, height: 70}
+          style: { padding: 10, height: 60}
+        
         }}>
 
-        <Tab.Screen name={homeName} component={HomeScreen} initialParams={{userName: userName}} />
-        <Tab.Screen name={exerciseName} component={ExerciseScreen} />
-        <Tab.Screen name={sleepName} component={SleepScreen}/>
-        <Tab.Screen name={deviceMName} component={StackNavigator2} />
-        <Tab.Screen name={gameName} component={StackNavigator} />
+        <Tab.Screen name={homeName} component={HomeScreen} initialParams={{userName: userName}} options={{headerShown: false}} />
+        <Tab.Screen name={exerciseName} component={ExerciseScreen} options={{headerShown: true}}/>
+        <Tab.Screen name={sleepName} component={SleepScreen} options={{headerShown: true}}/>
+        <Tab.Screen name={deviceMName} component={StackNavigator2} options={{headerShown: true}}/>
+        <Tab.Screen name={gameName} component={StackNavigator} options={{headerShown: true}}/>
 
       </Tab.Navigator>
     

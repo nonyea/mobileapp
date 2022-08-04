@@ -7,11 +7,11 @@ const Seperator = () => <View style = {styles.seperator} />
 const TrunkRotation = () => {
     return (
         <View style={styles.container2}>
-      <Text>Stand with a heavy object at chest height with elbows to the sides.</Text>
+      <Text>With a heavy object in your hands,  elevate them to chest height with your elbows at your sides.</Text>
       <Seperator/>
-      <Text>Twist from the torso, turning to one side, then the other.</Text>
+      <Text>Twist the torso to one side, then the other.</Text>
       <Seperator/>
-      <Text>A person can also hold the arms at shoulder height and twist side to side.</Text>
+      <Text>A person can also hold their arms at shoulder height and twist their torso from side to side.</Text>
       <Seperator/>
       <Image
           style={{width: '100%', height: '50%'}}
